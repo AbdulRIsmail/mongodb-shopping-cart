@@ -3,16 +3,12 @@ from typing import Dict
 
 from shopping_cart_interface import IShoppingCart
 from pricer import Pricer
-from format import Format
-
-
 class ShoppingCart(IShoppingCart):
     """
     Implementation of the shopping tills in our supermarket.
     """
     def __init__(self, pricer: Pricer):
         self.pricer = pricer
-        # self.format = format
         self._contents: Dict[str,int] = {}
 
     def convert_cents_to_euros(self, number):
